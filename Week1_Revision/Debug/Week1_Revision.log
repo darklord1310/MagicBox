@@ -1,16 +1,18 @@
-﻿Build started 20/5/2015 5:53:49 PM.
-     1>Project "D:\Personal\Week1_Revision\Week1_Revision\Week1_Revision.vcxproj" on node 2 (Build target(s)).
+﻿Build started 21/5/2015 2:04:41 AM.
+     1>Project "D:\Week1_Revision_selfVersion\Week1_Revision\Week1_Revision.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp Week1_Revision.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Week1_Revision.cpp
          Week1_Revision.cpp
-         stdafx.cpp
-         Generating Code...
+     1>d:\week1_revision_selfversion\week1_revision\week1_revision.cpp(243): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+     1>d:\week1_revision_selfversion\week1_revision\week1_revision.cpp(343): warning C4101: 'key_code' : unreferenced local variable
+     1>d:\week1_revision_selfversion\week1_revision\week1_revision.cpp(343): warning C4101: 'status' : unreferenced local variable
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Personal\Week1_Revision\Debug\Week1_Revision.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Personal\Week1_Revision\Debug\Week1_Revision.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Personal\Week1_Revision\Debug\Week1_Revision.lib" /MACHINE:X86 Debug\stdafx.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Week1_Revision_selfVersion\Debug\Week1_Revision.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Week1_Revision_selfVersion\Debug\Week1_Revision.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Week1_Revision_selfVersion\Debug\Week1_Revision.lib" /MACHINE:X86 Debug\stdafx.obj
          Debug\Week1_Revision.obj
-         Week1_Revision.vcxproj -> D:\Personal\Week1_Revision\Debug\Week1_Revision.exe
-     1>Done Building Project "D:\Personal\Week1_Revision\Week1_Revision\Week1_Revision.vcxproj" (Build target(s)).
+         Week1_Revision.vcxproj -> D:\Week1_Revision_selfVersion\Debug\Week1_Revision.exe
+     1>Done Building Project "D:\Week1_Revision_selfVersion\Week1_Revision\Week1_Revision.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.31
+Time Elapsed 00:00:00.82
