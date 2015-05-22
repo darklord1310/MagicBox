@@ -54,6 +54,7 @@ void UserInterface(int array[3][3]);
 void IsMagicBox(int array[3][3]);
 int checkForRepeativeValue(int IntegerEntered, int array[3][3], int row, int col);
 char IsUserWantToPlayAgain();
+void printNumberOrEmpty(int array[3][3], int row, int col);
 
 int cursor = 1;
 
@@ -89,19 +90,47 @@ char IsUserWantToPlayAgain()
 
 void printBox(int array[3][3])
 {
-	cout << "			_____________________" << endl;
+	cout << "			 _____________________" << endl;
 	cout << "			|      |      |      |" << endl;
 	cout << "			|      |      |      |" << endl;
-	cout << "			|  " << array[0][0] << "   |   " << array[0][1]<<"  |   "<<array[0][2]<<"  |" << endl;
+	cout << "			|  ";
+	printNumberOrEmpty(array, 0, 0); 
+	cout << "   |   ";
+	printNumberOrEmpty(array, 0, 1); 
+	cout << "  |   ";
+	printNumberOrEmpty(array, 0 , 2);
+	cout << "  |" << endl;
 	cout << "			|______|______|______|" << endl;
 	cout << "			|      |      |      |" << endl;
 	cout << "			|      |      |      |" << endl;
-	cout << "			|  " << array[1][0] << "   |   " << array[1][1] << "  |   " << array[1][2] << "  |" << endl;
+	cout << "			|  ";
+	printNumberOrEmpty(array, 1, 0);
+	cout << "   |   ";
+	printNumberOrEmpty(array, 1, 1);
+	cout << "  |   ";
+	printNumberOrEmpty(array, 1, 2);
+	cout << "  |" << endl;
 	cout << "			|______|______|______|" << endl;
 	cout << "			|      |      |      |" << endl;
 	cout << "			|      |      |      |" << endl;
-	cout << "			|  " << array[2][0] << "   |   " << array[2][1] << "  |   " << array[2][2] << "  |" << endl;
+	cout << "			|  ";
+	printNumberOrEmpty(array, 2, 0);
+	cout << "   |   ";
+	printNumberOrEmpty(array, 2, 1);
+	cout << "  |   ";
+	printNumberOrEmpty(array, 2, 2);
+	cout << "  |" << endl;
 	cout << "			|______|______|______|" << endl;
+}
+
+
+void printNumberOrEmpty(int array[3][3], int row, int col)
+{
+	if (array[row][col] == 0)
+		cout << " ";
+	else
+		cout << array[row][col];
+
 }
 
 
