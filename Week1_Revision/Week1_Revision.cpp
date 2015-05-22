@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include "windows.h"
+#include <ctype.h>
 
 
 #define ARROW_UP 			  72		// will output 2 bytes instead of 1 byte when press, first byte is  224
@@ -55,10 +56,40 @@ void IsMagicBox(int array[3][3]);
 int checkForRepeativeValue(int IntegerEntered, int array[3][3], int row, int col);
 char IsUserWantToPlayAgain();
 void printNumberOrEmpty(int array[3][3], int row, int col);
+void printLogo();
+int MainMenu();
+void handleUserSelection(int selection);
+void Game();
+void HowToPlay();
 
 int cursor = 1;
 
+
 void _tmain(int argc, _TCHAR* argv[])
+{
+	int selection;
+
+	while (1)
+	{
+		selection = MainMenu();
+		handleUserSelection(selection);
+	};
+
+	system("pause");
+}
+
+void handleUserSelection(int selection)
+{
+	if (selection == 1)
+		Game();
+	else if (selection == 2)
+		HowToPlay();
+	else
+		exit(1);
+}
+
+
+void Game()
 {
 	char answer;
 
@@ -70,10 +101,91 @@ void _tmain(int argc, _TCHAR* argv[])
 		answer = IsUserWantToPlayAgain();	// Play again or not
 
 	} while (answer != 'N');
-	
-	system("pause");
+
 }
 
+
+void HowToPlay()
+{
+	char answer;
+
+	system("CLS");
+	cout << endl << endl << endl;
+	cout << "		Rule is simple, in the game a box is given and you " << endl;
+	cout << "		have to fill number into the box." << endl << endl;
+	cout << "		Every number can only be the number from 1 to 9 and " << endl;
+	cout << "		it cannot be repeated." << endl << endl;
+	cout << "		All the sum of the number horizontally, vertically " << endl;
+	cout << "		and diagonally must be 15 " << endl << endl << endl;
+	cout << "		Return to main menu? (Y/N) : ";
+	cin >> answer;
+	answer = toupper(answer);
+
+	while (answer != 'Y' && answer != 'N')
+	{
+		system("CLS");
+		cout << endl << endl << endl;
+		cout << "		Rule is simple, in the game a box is given and you " << endl;
+		cout << "		have to fill number into the box." << endl << endl;
+		cout << "		Every number can only be the number from 1 to 9 and " << endl;
+		cout << "		it cannot be repeated." << endl << endl;
+		cout << "		All the sum of the number horizontally, vertically " << endl;
+		cout << "		and diagonally must be 15 " << endl << endl << endl;
+		cout << "		Please enter Y/N : ";
+		cin >> answer;
+		answer = toupper(answer);
+	}
+
+	if (answer == 'N')
+		HowToPlay();
+}
+
+int MainMenu()
+{
+	int selection;
+
+	system("CLS");
+	printLogo();
+	cout << endl << endl;
+	cout << "			1. Start the game" << endl;
+	cout << "			2. How to play" << endl;
+	cout << "			3. Exit" << endl << endl;
+	cout << "			Enter your selection (1-3) : ";
+	cin >> selection;
+
+	while ( selection < 1 || selection > 3)
+	{
+		system("CLS");
+		printLogo();
+		cout << endl << endl;
+		cout << "			1. Start the game" << endl;
+		cout << "			2. How to play" << endl;
+		cout << "			3. Exit" << endl << endl;
+		cout << "			Please enter accordingly : ";
+		cin >> selection;
+	}
+
+	return selection;
+}
+
+void printLogo()
+{
+	printf("    	  		        @@@@@@@@@@@@@@\n"	);
+	printf("    	  		       @           @ @\n"	);
+	printf("    	   		     @           @   @\n"	);
+	printf("    	  		    @@@@@@@@@@@@@    @\n"	);
+	printf("    			    @           @    @\n"	);
+	printf("    			    @           @    @\n"	);
+	printf("    	   		    @           @  @\n"	);
+	printf("    			    @@@@@@@@@@@@@@\n\n"		);
+
+	printf("        	 ## ##    #     ##   #   ###     $     $$   $ $   \n");
+	printf("        	#  #  #  #_#   #  #  #  #        $$$  $  $   $     \n");
+	printf("	        #     # #   #  ####  #   ###     $__$  $$   $ $   \n");
+	printf("	                          #                                   \n");
+	printf("	                       ###                                    \n");
+
+}
 
 char IsUserWantToPlayAgain()
 {
@@ -130,7 +242,6 @@ void printNumberOrEmpty(int array[3][3], int row, int col)
 		cout << " ";
 	else
 		cout << array[row][col];
-
 }
 
 
@@ -155,7 +266,7 @@ void UserInterface(int array[3][3])
 
 			isRepeative = checkForRepeativeValue(IntegerEntered, array, row, col);
 
-			while ( IntegerEntered < 0 || IntegerEntered > 9 || isRepeative == 1)
+			while ( IntegerEntered < 0 || IntegerEntered > 9 || isRepeative == 1 )
 			{
 				refreshScreen(array);
 				cout << "Please re-enter a valid value! : ";
