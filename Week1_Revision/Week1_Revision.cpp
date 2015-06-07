@@ -7,6 +7,7 @@
 #include <conio.h>
 #include "windows.h"
 #include <ctype.h>
+#include <string>
 
 
 #define ARROW_UP 			  72		// will output 2 bytes instead of 1 byte when press, first byte is  224
@@ -48,7 +49,12 @@
 
 typedef int Keycode;
 
+HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+COORD CursorPosition;
+
 using namespace std;
+
+
 
 void printBox(int array[3][3]);
 void UserInterface(int array[3][3]);
@@ -61,6 +67,9 @@ int MainMenu();
 void handleUserSelection(int selection);
 void Game();
 void HowToPlay();
+void gotoXY(int,int);
+void gotoXY(int,int,string);
+void getCursorPosition(int *x, int *y);
 
 int cursor = 1;
 
@@ -501,4 +510,29 @@ void InputInterface()
 			return status;
 		}
 		*/
+}
+
+
+void gotoXY(int x, int y) 
+{ 
+  CursorPosition.X = x; 
+  CursorPosition.Y = y; 
+  SetConsoleCursorPosition(console,CursorPosition); 
+}
+
+
+void gotoXY(int x, int y, string text) 
+{ 
+
+  CursorPosition.X = x; 
+  CursorPosition.Y = y; 
+  SetConsoleCursorPosition(console,CursorPosition);
+  cout << text;
+}
+
+void getCursorPosition(int *x, int *y)
+{
+	CursorPosition.X = *x;
+	CursorPosition.Y = *y;
+
 }
